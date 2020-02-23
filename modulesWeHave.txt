@@ -1,0 +1,26 @@
+        """
+        self.send_command(ChangeDirection(random.choice(list(EDirection))))
+        EDirection = {Up, Right, Down, Left}
+        self.send_command(ActivateWallBreaker())
+        self.world.board[y][x] Empty AreaWall BlueWall YellowWall
+        self.world.agents[self.my_side].health
+        self.world.agents[self.my_side].position.x
+        self.world.agents[self.my_side].position.y
+        self.world.agents[self.my_side].direction
+        self.world.agents[self.my_side].wall_breaker_cooldown
+        self.world.agents[self.my_side].wall_breaker_rem_time
+        self.world.scores
+        self.world.constants.max_cycles
+        self.world.constants.init_health
+        self.world.constants.wall_breaker_cooldown
+        self.world.constants.wall_breaker_duration
+        self.world.constants.wall_score_coefficient
+        self.world.constants.area_wall_crash_score
+        self.world.constants.my_wall_crash_score
+        self.world.constants.enemy_wall_crash_score
+        self.world.constants
+        self.my_side
+        self.other_side
+        self.current_cycle
+        self.cycle_duration
+        """
