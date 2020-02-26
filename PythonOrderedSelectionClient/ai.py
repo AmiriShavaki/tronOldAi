@@ -52,6 +52,6 @@ class AI(RealtimeAI):
                     if self.world.board[curY + yDir[i]][curX + xDir[i]] == ECell.Empty:
                             chooseList.append(Dir[i])
         if len(chooseList):
-            decision = random.choice(chooseList)
+            decision = chooseList[0]
             if self.world.agents[self.my_side].direction != decision:
                 self.send_command(ChangeDirection(decision))
