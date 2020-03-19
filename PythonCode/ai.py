@@ -91,14 +91,16 @@ class AI(RealtimeAI):
                 ans.append(i)
         return ans
                 
-    def opposite(self, curDir): #returns ind
-        if curDir == EDirection.Up:
+    def opposite(self, curDir):
+        """returns ind
+        Up0 Right1 Down2 Left3"""
+        if curDir == 0:
             return 2
-        if curDir == EDirection.Right:
+        if curDir == 1:
             return 3
-        if curDir == EDirection.Down:
+        if curDir == 2:
             return 0
-        if curDir == EDirection.Left:
+        if curDir == 3:
             return 1
 
     def reachableSpace(self, x, y, curDir):
@@ -174,17 +176,17 @@ class AI(RealtimeAI):
             elif res == ma:
                 betterMoves.append(i)
                 
-        if len(betterMoves) > 0:
+        if len(betterMoves) > 0: #At least one empty neighbor exist
             print("betterMoves: ", betterMoves)
             decision = self.mostOpenDecision(curX, curY, betterMoves)
-        else:
+        else: #Which path better to go with wallbreaker is on
             moves = self.playerWallNeighbors(curX, curY)
             res = [float("inf")] * 4
             mi = float("inf")
             ans = 0
             for i in moves:
                 res[i] = self.reachableEmptyWB(curX, curY, i)
-                if res[i] < mi:
+                if res[i] < mi and i != self.opposite(curDir):
                     mi = res[i]
                     ans = i
             print("res: ", res)
